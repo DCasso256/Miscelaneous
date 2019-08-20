@@ -1,10 +1,3 @@
-'''
-This code encrypts and decrypts messages using a substitution method,
-which consists on shifting each letter a certain number of places (defined by
-a key), up or down the english alphabet depending on the selected action,
-it will only work with positive keys.
-'''
-
 alpha = "abcdefghijklmnopqrstuvwxyz"
 key = 30
 class caesar:
@@ -45,17 +38,4 @@ class caesar:
                     y2 += alpha[cntr - key]
             elif ltr == " ":
                y2 += " "
-
-
         print("Here's your decoded message: \n" + y2)
-
-x = input("Send 'e' to encrypt or 'd' to decrypt your message: \n").casefold()
-
-if x == "e":
-    y = input ("Send your message: \n")
-    cyph = caesar(y)
-    cyph.encrypt()
-elif x == "d":
-    y = input("Send your message:\n")
-    cyph = caesar(y)
-    cyph.decrypt()
