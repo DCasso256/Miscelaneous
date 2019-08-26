@@ -8,10 +8,8 @@ class caesar:
     def encrypt(self):
         y2 = ""
         for ltr in self.phrase:
-            cntr = 0
-            while ltr != " " and ltr != alpha[cntr]:
-                cntr +=1
-            if ltr == alpha[cntr]:
+            if ltr in alpha:
+                cntr = alpha.index(ltr)
                 if (cntr + key) > 25:
                     module = (cntr + key) % (len(alpha))
                     if (cntr + module) > 25:
@@ -27,10 +25,8 @@ class caesar:
     def decrypt(self):
         y2 = ""
         for ltr in self.phrase:
-            cntr = 0
-            while ltr != alpha[cntr] and ltr != " ":
-                cntr += 1
-            if ltr == alpha [cntr]:
+            if ltr in alpha:
+                cntr = alpha.index(ltr)
                 if (cntr - key) < -26:
                     module = (cntr - key) % (len(alpha))
                     y2 += alpha[0 + module]
